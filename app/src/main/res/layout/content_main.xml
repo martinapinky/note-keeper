@@ -8,15 +8,42 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:id="@+id/textDisplayedValue"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/textNoteText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note Text"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCourses"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCourses"
+        app:layout_constraintTop_toBottomOf="@+id/textNoteTitle" />
+
+    <Spinner
+        android:id="@+id/spinnerCourses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/textNoteTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note Title"
+        android:inputType="textMultiLine"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCourses"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCourses"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCourses" />
 </androidx.constraintlayout.widget.ConstraintLayout>

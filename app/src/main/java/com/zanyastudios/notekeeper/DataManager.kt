@@ -1,6 +1,6 @@
 package com.zanyastudios.notekeeper
 
-class DataManager {
+object DataManager {
 
     val courses = HashMap<String, CourseInfo>()
     val notes = ArrayList<NoteInfo>()
@@ -19,6 +19,13 @@ class DataManager {
         course = CourseInfo(title = "Java Fundamentals: The Java Language", courseId = "java_lang")
         courses.set(course.courseId, course)
 
+        course = CourseInfo(title = "Java Fundamentals: The Core Platform", courseId = "core_platform")
+        courses.set(course.courseId, course)
+
+
+    }
+
+    private fun initializeNotes() {
 
     }
 }

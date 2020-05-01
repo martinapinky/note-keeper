@@ -5,6 +5,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -16,13 +17,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            val originalValue = textDisplayedValue.text.toString().toInt();
-            val newValue = originalValue * 2;
-            textDisplayedValue.text = newValue.toString();
-            Snackbar.make(view, "Value $originalValue changed to $newValue", Snackbar.LENGTH_LONG)
-                .show()
-        }
+
+        val adapterCourses = ArrayAdapter<CourseInfo>(this,
+            android.R.layout.simple_spinner_item, DataManager.courses.values.toList())
+        adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        spinnerCourses.adapter = adapterCourses
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
