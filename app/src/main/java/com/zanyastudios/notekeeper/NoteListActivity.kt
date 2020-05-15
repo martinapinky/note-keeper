@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_note_list.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.content_note_list.*
 
 class NoteListActivity : AppCompatActivity() {
@@ -24,11 +25,12 @@ class NoteListActivity : AppCompatActivity() {
             android.R.layout.simple_list_item_1,
             DataManager.notes)
 
-        listNotes.setOnItemClickListener{parent, view, position, id ->
+        listNotes.setOnItemClickListener { parent, view, position, id ->
             val activityIntent = Intent(this, MainActivity::class.java)
             activityIntent.putExtra(EXTRA_NOTE_POSITION, position)
             startActivity(activityIntent)
         }
+
     }
 
 }
